@@ -1,0 +1,19 @@
+.nav-bar
+{
+    /* background-color: rgb(242, 242, 242); */
+    padding: 10px;
+    text-align: right;
+    
+}
+.header
+{
+    background-color: rgb(151, 132, 132);
+    padding: 10px;
+    text-align: center;
+}
+#foot
+{
+    background-color: rgb(124, 141, 157);
+    padding: 10px;
+    text-align: center;
+}

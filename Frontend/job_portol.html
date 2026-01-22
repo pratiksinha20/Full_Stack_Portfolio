@@ -3,30 +3,34 @@
 <head>
     <title>UniHire | Student Job Portal</title>
 </head>
-<body>
+<style>
+    @import url('style.css');
+</style>
 
+<body style="background-color: antiquewhite;">
+<header class="header" style="border-radius: 20px;">
 <!-- ===== PORTAL TITLE ===== -->
-<pre>
-====================================================
+<pre style="text-align: center; font-weight: bold; ">
+<!-- ==================================================== -->
                 U N I H I R E
         A Simple Job Portal for Students
-====================================================
+<!-- ==================================================== -->
 </pre>
 
 <!-- ===== NAVIGATION ===== -->
-<nav>
+<nav class="nav-bar">
     <a href="#home">Home</a>&nbsp;&nbsp;&nbsp;
     <a href="#jobs">Jobs</a>&nbsp;&nbsp;&nbsp;
     <a href="#companies">Companies</a>&nbsp;&nbsp;&nbsp;
     <a href="#apply">Apply</a>&nbsp;&nbsp;&nbsp;
     <a href="#contact">Contact</a>
 </nav>
-
+</header>
 <hr>
 
 <!-- ===== HOME SECTION ===== -->
 <section id="home">
-    <h2>Welcome to UniHire</h2>
+    <h2 >Welcome to UniHire</h2>
     <p>
         UniHire is a basic job portal designed for students and freshers.
         This portal helps candidates find suitable jobs and internships
@@ -44,7 +48,7 @@
 <section id="jobs">
     <h2>Available Jobs</h2>
 
-    <table border="1" cellpadding="8">
+    <table border="1" cellpadding="8" style="border-radius: 7px;">
         <tr>
             <th>Job ID</th>
             <th>Role</th>
@@ -96,8 +100,8 @@
     <h2>Apply for Job</h2>
 
     <form>
-        <fieldset>
-            <legend>Candidate Details</legend>
+        <fieldset style="border-color: rgb(220, 28, 124); border-radius: 5px;">
+            <legend >Candidate Details</legend>
 
             Name:<br>
             <input type="text"><br><br>
@@ -140,11 +144,11 @@
 <hr>
 
 <!-- ===== FOOTER ===== -->
-<footer>
+<footer id="foot" style="border-radius: 20px;">
 <pre>
 ----------------------------------------------------
 This project is developed using ONLY HTML
-Academic Project – 2nd Year CSE
+Academic Project - 2nd Year CSE
 © 2026 UniHire
 ----------------------------------------------------
 </pre>
