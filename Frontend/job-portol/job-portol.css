@@ -1,0 +1,29 @@
+body 
+{
+    background-color: #080808;
+    color:hsl(0, 0%, 100%)
+}
+
+
+/* hr{
+    border: 0.8px solid crimson;
+    background-color:crimson
+} */
+ nav a
+ {
+    color:white;
+    text-decoration: none;
+
+ }
+ nav a:hover
+ {
+    color:rgb(115, 195, 249);
+    text-decoration: underline;
+
+ }
+ nav a:active
+ {
+    color: red;
+    text-decoration: underline;
+
+ }

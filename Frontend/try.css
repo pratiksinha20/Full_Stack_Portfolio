@@ -1,0 +1,51 @@
+body,html
+{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: end;
+
+    justify-content: center;
+}
+
+#div
+{
+    position: sticky;
+    border: solid 10px #b02424 ;
+    padding: 50px ;
+    margin: 40px ;
+    background-color: #e0b4b4 ;
+    color: #1a0b0b ;
+    font-size: 30px ;
+    text-align: center ;
+    height: 200px;
+    width: 400px;
+}
+
+#div1
+{
+    position: sticky;
+    border: solid 10px #2432b0 ;
+    padding: 50px ;
+    margin: 40px ;
+    background-color: #b4c7e0 ;
+    color: #0b1a3d ;
+    font-size: 30px ;
+    text-align: center ;
+    height: 200px;
+    width: 400px;
+}
+
+#div2
+{
+    position: sticky;
+    border: solid 10px #24b04a ;
+    padding: 50px ;
+    margin: 40px ;
+    background-color: #b4e0c8 ;
+    color: #0b3d1a ;
+    font-size: 30px ;
+    text-align: center ;
+    height: 200px;
+    width: 400px;
+}

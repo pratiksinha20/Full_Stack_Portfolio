@@ -3,14 +3,13 @@
 <head>
     <title>UniHire | Student Job Portal</title>
 </head>
-<style>
-    @import url('style.css');
-</style>
+<link rel="stylesheet" href="job-portol.css">
 
-<body style="background-color: antiquewhite;">
+
+<body class="body">
 <header class="header" style="border-radius: 20px;">
 <!-- ===== PORTAL TITLE ===== -->
-<pre style="text-align: center; font-weight: bold; ">
+<pre style="text-align: center; font-weight: bold; font-size: 20px; color: rgb(115, 195, 249);">
 <!-- ==================================================== -->
                 U N I H I R E
         A Simple Job Portal for Students
@@ -26,11 +25,11 @@
     <a href="#contact">Contact</a>
 </nav>
 </header>
-<hr>
+<hr style="border-color: rgb(115, 195, 249);">
 
 <!-- ===== HOME SECTION ===== -->
 <section id="home">
-    <h2 >Welcome to UniHire</h2>
+    <h2 style="color: rgb(115, 195, 249);">Welcome to UniHire</h2>
     <p>
         UniHire is a basic job portal designed for students and freshers.
         This portal helps candidates find suitable jobs and internships
@@ -46,7 +45,7 @@
 
 <!-- ===== JOB LISTINGS ===== -->
 <section id="jobs">
-    <h2>Available Jobs</h2>
+    <h2 style="color: rgb(115, 195, 249);">Available Jobs</h2>
 
     <table border="1" cellpadding="8" style="border-radius: 7px;">
         <tr>
@@ -83,7 +82,7 @@
 
 <!-- ===== COMPANY SECTION ===== -->
 <section id="companies">
-    <h2>Registered Companies</h2>
+    <h2 style="color: rgb(115, 195, 249);">Registered Companies</h2>
 
     <ul>
         <li>TechNova Solutions</li>
@@ -97,17 +96,17 @@
 
 <!-- ===== APPLICATION FORM ===== -->
 <section id="apply">
-    <h2>Apply for Job</h2>
+    <h2 style="color: rgb(115, 195, 249);">Apply for Job</h2>
 
     <form>
-        <fieldset style="border-color: rgb(220, 28, 124); border-radius: 5px;">
+        <fieldset style="border-color:rgb(115, 195, 249); border-radius: 5px;">
             <legend >Candidate Details</legend>
 
             Name:<br>
-            <input type="text"><br><br>
+            <input type="text" placeholder="Enter your name"><br><br>
 
             Email:<br>
-            <input type="email"><br><br>
+            <input type="email" placeholder="Enter your email"><br><br>
 
             Qualification:<br>
             <select>
@@ -118,12 +117,13 @@
             </select><br><br>
 
             Job ID Applying For:<br>
-            <input type="text"><br><br>
+            <input type="text" placeholder="Enter Job ID"><br><br>
 
             Skills:<br>
-            <textarea rows="4" cols="40"></textarea><br><br>
+            <textarea rows="4" cols="40" placeholder="Enter your skills"></textarea><br><br>
 
             <input type="submit" value="Apply">
+            <button type="reset">Reset</button>
         </fieldset>
     </form>
 </section>
@@ -132,16 +132,16 @@
 
 <!-- ===== CONTACT SECTION ===== -->
 <section id="contact">
-    <h2>Contact Us</h2>
+    <h2 style="color: rgb(115, 195, 249);">Contact Us</h2>
 
     <address>
         UniHire Job Portal<br><br>
-        Email: unihire.support@gmail.com<br><br>
+        Email: UniHire@gmail.com<br><br>
         Location: Chandigarh, India
     </address>
 </section>
 
-<hr>
+<hr style="border-color: rgb(115, 195, 249);">
 
 <!-- ===== FOOTER ===== -->
 <footer id="foot" style="border-radius: 20px;">
