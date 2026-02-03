@@ -27,3 +27,20 @@ body
     text-decoration: underline;
 
  }
+ .apply
+ {
+   background-color: #2e2c2c;
+ }
+ .b
+ {
+    background-color: rgb(18, 197, 237);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+ }
+   .b:hover
+   {
+      background-color: rgb(12, 150, 182);
+   }
