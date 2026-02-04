@@ -44,3 +44,7 @@ body
    {
       background-color: rgb(12, 150, 182);
    }
+.nav-bar
+{
+   text-align: end;
+}
