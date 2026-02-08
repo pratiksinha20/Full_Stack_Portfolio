@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>UniHire | Student Job Portal</title>
+    <title id="title" >UniHire</title>
+    <link rel="icon" href="unihire.png" type="image/png" style="border-radius: 50%;">
 </head>
 <link rel="stylesheet" href="job-portol.css">
 
 
 <body class="body">
-<header class="header" style="border-radius: 20px;">
+<header class="header" style="border-radius: 20px; display: flex; align-items: center; justify-content: space-between;">
 <!-- ===== PORTAL TITLE ===== -->
-<pre style="text-align: center; font-weight: bold; font-size: 20px; color: rgb(115, 195, 249);">
-<!-- ==================================================== -->
-                U N I H I R E
-        A Simple Job Portal for Students
-<!-- ==================================================== -->
-</pre>
+ <pre><img src="unihire.png" alt="" style="height: 100px;"></pre>
 
 <!-- ===== NAVIGATION ===== -->
-<nav class="nav-bar">
-    <a href="#home">Home</a>&nbsp;&nbsp;&nbsp;
-    <a href="#jobs">Jobs</a>&nbsp;&nbsp;&nbsp;
-    <a href="#companies">Companies</a>&nbsp;&nbsp;&nbsp;
-    <a href="#apply">Apply</a>&nbsp;&nbsp;&nbsp;
+<nav class="nav-bar" style="display: flex; justify-content: right; gap: 20px; font-size: 14px; color: black;">
+
+    <a href="#sun">☀️</a>
+    <a href="#moon">🌙</a>
+    <a href="#home">Home</a>
+    <a href="#jobs">Jobs</a>
+    <a href="#companies">Companies</a>
+    <button id="applyBtn">Apply</button>
     <a href="#contact">Contact</a>
 </nav>
 </header>
@@ -95,11 +94,12 @@
 <hr>
 
 <!-- ===== APPLICATION FORM ===== -->
+ <div id="applySection">
 <section id="apply">
     <h2 style="color: rgb(115, 195, 249);">Apply for Job</h2>
 
     <form>
-        <fieldset style="border-color:rgb(115, 195, 249); border-radius: 5px;">
+        <fieldset id="style" style="border-color:rgb(115, 195, 249); border-radius: 5px; display: inline-block; width: 200px;">
             <legend >Candidate Details</legend>
 
             Name:<br>
@@ -121,38 +121,89 @@
 
             Skills:<br>
             <textarea rows="4" cols="40" placeholder="Enter your skills" class="apply"></textarea><br><br>
+             <!-- Add a span or div where the count will appear  -->
+             <p>Forms submitted: <span id="count">0</span></p>
 
-            <input type="submit" value="Apply" class="b">
+            <button id="apply" class="b">Apply</button>
+
             <button type="reset" class="b">Reset</button>
         </fieldset>
     </form>
-</section>
+</section> 
+</div>
+<!-- Header Apply button -->
 
-<hr>
 
+<!-- Hidden Apply Section -->
+<!-- <div id="applySection" style="display:none;">
+  <h2>Apply for Job</h2>
+  <form>
+    <label>Name:</label>
+    <input type="text" name="name"><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email"><br><br>
+
+    <label>Qualification:</label>
+    <select>
+      <option>B.Tech</option>
+      <option>M.Tech</option>
+    </select><br><br>
+
+    <label>Job ID Applying For:</label>
+    <input type="text" name="jobid"><br><br>
+
+    <label>Skills:</label>
+    <textarea></textarea><br><br>
+
+    <button type="submit">Apply</button>
+    <button type="reset">Reset</button>
+  </form>
+</div> -->
+
+<!-- <hr style="border-color: rgb(115, 195, 249);"> -->
+
+<!-- ===== FOOTER ===== -->
+<footer id="foot" style="border-radius: 20px;">
+<pre>
+<div style="display: flex;" id="course">
+<div class="border" style="border: 1px solid gray;">
+    <img src="fullstack.png" alt="Full Stack Development" style="height: 102px;">
+    <h3>Full Stack Development</h3>
+    <button class="button">Continue learning</button>
+</div>
+<div class="border" style="border: 1px solid gray;">
+    <img src="java.png" alt="Java" style="height: 102px;">
+    <h3>Java</h3>
+    <button class="button">Continue learning</button>
+</div>
+<div class="border" style="border: 1px solid gray;">
+    <img src="python.png" alt="Python" style="height: 102px;">
+    <h3>Python</h3>
+    <button class="button">Continue learning</button>
+</div>
+<div class="border" style="border: 1px solid gray;">
+    <img src="ml.png" alt="Machine Learning" style="height: 104px;">
+    <h3>Machine Learning</h3>
+    <button class="button">Continue learning</button>
+</div>
+</div>
 <!-- ===== CONTACT SECTION ===== -->
 <section id="contact">
     <h2 style="color: rgb(115, 195, 249);">Contact Us</h2>
 
-    <address>
+    <address style="font-style: normal; text-align:justify;">
         UniHire Job Portal<br><br>
         Email: UniHire@gmail.com<br><br>
         Location: Chandigarh, India
     </address>
 </section>
+<!-- ---------------------------------------------------- -->
 
-<hr style="border-color: rgb(115, 195, 249);">
-
-<!-- ===== FOOTER ===== -->
-<footer id="foot" style="border-radius: 20px;">
-<pre>
-----------------------------------------------------
-This project is developed using ONLY HTML
-Academic Project - 2nd Year CSE
 © 2026 UniHire
-----------------------------------------------------
+<!-- ---------------------------------------------------- -->
 </pre>
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
