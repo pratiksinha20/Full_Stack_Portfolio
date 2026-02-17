@@ -1,0 +1,83 @@
+/* Advanced, unique color scheme and texture for comparison site */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f8e5e5 0%, #f8e5e5 100%);
+    transition: background 0.5s;
+}
+.dark-bg {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #fff;
+}
+header {
+    background: #c39ea0;
+    color: #fff;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(79,140,255,0.2);
+}
+.logo {
+  height: 100px;      /* best for navbar */
+  width: 100px;       /* keeps aspect ratio */
+  object-fit: contain;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
+.toggle-btn.active {
+    background: #232526;
+    color: #fff;
+}
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: rgba(255,255,255,0.85);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(79,140,255,0.15);
+    padding: 2rem;
+}
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+.comparison-table th, .comparison-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+.comparison-table th {
+    background: #c39ea0;
+    color: #fff;
+}
+.comparison-table tr:nth-child(even) {
+    background: #f0f6ff;
+}
+.site-logo {
+    height: 32px;
+    vertical-align: middle;
+}
+.rating {
+    color: #ffb400;
+    font-size: 1.2rem;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    .comparison-table th, .comparison-table td {
+        padding: 0.5rem;
+    }
+}
