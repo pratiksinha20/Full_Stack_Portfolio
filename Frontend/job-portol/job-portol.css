@@ -1,101 +1,706 @@
-body 
-{
-    background-color: #080808;
-    color:hsl(0, 0%, 100%)
+/* ========================================
+   UniHire — Modern Job Portal Styles
+   ======================================== */
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
-
-/* hr{
-    border: 0.8px solid crimson;
-    background-color:crimson
-} */
- nav a
- {
-    color:rgb(249, 248, 248);
-    text-decoration: none;
-
- }
- nav a:hover
- {
-    color:rgb(115, 195, 249);
-    text-decoration: underline;
-
- }
- #applyBtn:hover {
-  background-color: #007bff; /* highlight on hover */
-  color: white;
-  cursor: pointer;
+:root {
+   --bg-primary: #0a0e17;
+   --bg-secondary: #111827;
+   --bg-card: #1a2235;
+   --bg-card-hover: #1e293b;
+   --accent: #22d3ee;
+   --accent-dark: #0ea5c9;
+   --accent-glow: rgba(34, 211, 238, 0.25);
+   --text-primary: #f0f4f8;
+   --text-secondary: #94a3b8;
+   --border: #1e293b;
+   --danger: #ef4444;
+   --danger-hover: #dc2626;
+   --success: #22c55e;
+   --warning: #f59e0b;
+   --radius: 12px;
+   --radius-sm: 8px;
+   --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
- nav a:active
- {
-    color: red;
-    text-decoration: underline;
-
- }
- #style:hover
- {
-   background-color: rgb(61, 87, 87);
- }
- .apply
- {
-   background-color: #2e2c2c;
-   color: white;
- }
- .b
- {
-    background-color: rgb(18, 197, 237);
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
- }
-   .b:hover
-   {
-      background-color: rgb(12, 150, 182);
-   }
-.nav-bar
-{
-   text-align: end;
-   font-size: 10px;
+html {
+   scroll-behavior: smooth;
 }
 
-.border
-{
-   border: 1px solid gray;
-   padding-right:40px;
-   padding-left: 20px;
-   padding-bottom: 40px;
-   border-radius: 10px;
-   margin-right:20px;
+body {
+   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+   background-color: var(--bg-primary);
+   color: var(--text-primary);
+   line-height: 1.6;
+   overflow-x: hidden;
+}
+
+/* ---------- Header / Navbar ---------- */
+.header {
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 16px 40px;
+   background: rgba(10, 14, 23, 0.85);
+   backdrop-filter: blur(16px);
+   border-bottom: 1px solid var(--border);
+}
+
+.logo-area {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+.logo-img {
+   height: 44px;
+   border-radius: 50%;
+}
+
+.logo-text {
+   font-size: 1.5rem;
+   font-weight: 800;
+   letter-spacing: -0.5px;
+   color: var(--text-primary);
+}
+
+.accent {
+   color: var(--accent);
+}
+
+.nav-bar {
+   display: flex;
+   align-items: center;
+   gap: 28px;
+}
+
+.nav-bar a {
+   color: var(--text-secondary);
+   text-decoration: none;
+   font-size: 0.9rem;
+   font-weight: 500;
+   transition: color var(--transition);
+   position: relative;
+}
+
+.nav-bar a::after {
+   content: '';
+   position: absolute;
+   bottom: -4px;
+   left: 0;
+   width: 0;
+   height: 2px;
+   background: var(--accent);
+   transition: width var(--transition);
+}
+
+.nav-bar a:hover {
+   color: var(--accent);
+}
+
+.nav-bar a:hover::after {
+   width: 100%;
+}
+
+.nav-apply-btn {
+   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+   color: var(--bg-primary) !important;
+   padding: 8px 22px;
+   border-radius: 24px;
+   font-weight: 600 !important;
+   transition: transform var(--transition), box-shadow var(--transition) !important;
+}
+
+.nav-apply-btn::after {
+   display: none !important;
+}
+
+.nav-apply-btn:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 4px 20px var(--accent-glow);
+   color: var(--bg-primary) !important;
+}
+
+/* ---------- Hero Section ---------- */
+.hero-section {
+   padding: 80px 40px 60px;
    text-align: center;
-   background-color: rgb(39, 38, 38);
-   
-}
-.border:hover
-{
-   background-color: rgb(0, 0, 0);
-   color: rgb(235, 235, 235);
-}
-.button 
-{
-   background-color: rgba(7, 7, 7, 0.281);
-    color: rgb(68, 209, 211);
-    font-weight: bold;
-    border: none;
-    padding: 8px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: solid rgb(68, 209, 211);
-}
-.button:hover
-{
-   background-color: rgb(68, 209, 211);
-   color: black;
-}
-.course
-{
-   margin-right: 20px;
+   background: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.06) 0%, transparent 70%);
 }
 
+.hero-content h1 {
+   font-size: 3rem;
+   font-weight: 800;
+   letter-spacing: -1px;
+   margin-bottom: 16px;
+   line-height: 1.15;
+}
+
+.hero-sub {
+   max-width: 600px;
+   margin: 0 auto 24px;
+   color: var(--text-secondary);
+   font-size: 1.05rem;
+}
+
+.hero-quote {
+   display: inline-block;
+   padding: 12px 28px;
+   background: var(--bg-card);
+   border-left: 3px solid var(--accent);
+   border-radius: var(--radius-sm);
+   color: var(--text-secondary);
+   font-style: italic;
+   font-size: 0.95rem;
+}
+
+/* ---------- Sections ---------- */
+.section {
+   padding: 50px 40px;
+}
+
+.section-header {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   margin-bottom: 28px;
+}
+
+.section-header h2 {
+   font-size: 1.75rem;
+   font-weight: 700;
+   position: relative;
+}
+
+.section-header h2::after {
+   content: '';
+   display: block;
+   width: 48px;
+   height: 3px;
+   background: var(--accent);
+   border-radius: 2px;
+   margin-top: 6px;
+}
+
+/* ---------- Job Count Badge ---------- */
+.job-count-badge {
+   display: inline-flex;
+   align-items: center;
+   padding: 6px 16px;
+   background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(14, 165, 201, 0.08));
+   border: 1px solid rgba(34, 211, 238, 0.3);
+   border-radius: 24px;
+   font-size: 0.82rem;
+   font-weight: 600;
+   color: var(--accent);
+   letter-spacing: 0.3px;
+}
+
+/* ---------- Search Bar ---------- */
+.search-container {
+   position: relative;
+   max-width: 480px;
+   margin-bottom: 24px;
+}
+
+.search-icon {
+   position: absolute;
+   left: 16px;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 1rem;
+   pointer-events: none;
+}
+
+.search-input {
+   width: 100%;
+   padding: 14px 20px 14px 46px;
+   background: var(--bg-card);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+   color: var(--text-primary);
+   font-family: inherit;
+   font-size: 0.95rem;
+   outline: none;
+   transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.search-input::placeholder {
+   color: var(--text-secondary);
+}
+
+.search-input:focus {
+   border-color: var(--accent);
+   box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* ---------- Add Job Card ---------- */
+.add-job-card {
+   background: var(--bg-card);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+   padding: 24px;
+   margin-bottom: 28px;
+   max-width: 720px;
+}
+
+.add-job-card h3 {
+   font-size: 1.05rem;
+   font-weight: 600;
+   margin-bottom: 16px;
+   color: var(--text-primary);
+}
+
+.add-job-form {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px;
+   align-items: flex-end;
+}
+
+.add-job-input {
+   flex: 1 1 140px;
+   padding: 10px 14px;
+   background: var(--bg-secondary);
+   border: 1px solid var(--border);
+   border-radius: var(--radius-sm);
+   color: var(--text-primary);
+   font-family: inherit;
+   font-size: 0.88rem;
+   outline: none;
+   transition: border-color var(--transition);
+}
+
+.add-job-input:focus {
+   border-color: var(--accent);
+}
+
+.add-job-input::placeholder {
+   color: var(--text-secondary);
+}
+
+/* ---------- Table ---------- */
+.table-wrapper {
+   overflow-x: auto;
+   border-radius: var(--radius);
+   border: 1px solid var(--border);
+}
+
+#jobTable {
+   width: 100%;
+   border-collapse: collapse;
+   min-width: 540px;
+}
+
+#jobTable thead {
+   background: var(--bg-card);
+}
+
+#jobTable th {
+   padding: 14px 18px;
+   font-size: 0.8rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.6px;
+   color: var(--text-secondary);
+   text-align: left;
+   border-bottom: 1px solid var(--border);
+}
+
+#jobTable td {
+   padding: 14px 18px;
+   font-size: 0.92rem;
+   border-bottom: 1px solid var(--border);
+   transition: background var(--transition);
+}
+
+#jobTable tbody tr {
+   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+#jobTable tbody tr:hover {
+   background: rgba(34, 211, 238, 0.05);
+   box-shadow: inset 3px 0 0 var(--accent);
+}
+
+/* Type badges */
+.badge {
+   display: inline-block;
+   padding: 4px 12px;
+   border-radius: 20px;
+   font-size: 0.78rem;
+   font-weight: 600;
+   letter-spacing: 0.3px;
+}
+
+.badge-fulltime {
+   background: rgba(34, 197, 94, 0.12);
+   color: #4ade80;
+   border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.badge-internship {
+   background: rgba(245, 158, 11, 0.12);
+   color: #fbbf24;
+   border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.badge-parttime {
+   background: rgba(168, 85, 247, 0.12);
+   color: #c084fc;
+   border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.badge-remote {
+   background: rgba(59, 130, 246, 0.12);
+   color: #60a5fa;
+   border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.no-results {
+   text-align: center;
+   color: var(--text-secondary);
+   padding: 20px;
+   font-style: italic;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 6px;
+   padding: 10px 20px;
+   border: none;
+   border-radius: var(--radius-sm);
+   font-family: inherit;
+   font-size: 0.88rem;
+   font-weight: 600;
+   cursor: pointer;
+   transition: all var(--transition);
+}
+
+.btn-accent {
+   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+   color: var(--bg-primary);
+}
+
+.btn-accent:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.btn-accent:disabled {
+   background: var(--border);
+   color: var(--text-secondary);
+   cursor: not-allowed;
+   transform: none;
+   box-shadow: none;
+}
+
+.btn-outline {
+   background: transparent;
+   border: 1px solid var(--border);
+   color: var(--text-secondary);
+}
+
+.btn-outline:hover {
+   border-color: var(--accent);
+   color: var(--accent);
+}
+
+.btn-outline-cyan {
+   background: transparent;
+   border: 1px solid var(--accent);
+   color: var(--accent);
+   padding: 8px 18px;
+   border-radius: 6px;
+}
+
+.btn-outline-cyan:hover {
+   background: var(--accent);
+   color: var(--bg-primary);
+   box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.btn-lg {
+   padding: 14px 32px;
+   font-size: 0.95rem;
+}
+
+.btn-delete {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 32px;
+   height: 32px;
+   padding: 0;
+   background: rgba(239, 68, 68, 0.1);
+   color: var(--danger);
+   border: 1px solid rgba(239, 68, 68, 0.25);
+   border-radius: 50%;
+   font-size: 0.82rem;
+   font-weight: 700;
+}
+
+.btn-delete:hover {
+   background: var(--danger);
+   color: #fff;
+   border-color: var(--danger);
+   transform: scale(1.15);
+   box-shadow: 0 0 14px rgba(239, 68, 68, 0.4);
+}
+
+/* ---------- Company Cards ---------- */
+.company-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   gap: 20px;
+}
+
+.company-card {
+   background: var(--bg-card);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+   padding: 28px 20px;
+   text-align: center;
+   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.company-card:hover {
+   transform: translateY(-6px);
+   box-shadow: 0 8px 30px rgba(34, 211, 238, 0.1);
+   border-color: var(--accent);
+}
+
+.company-icon {
+   font-size: 2rem;
+   margin-bottom: 12px;
+}
+
+.company-card h4 {
+   font-size: 0.92rem;
+   font-weight: 600;
+}
+
+/* ---------- Apply Card / Form ---------- */
+.apply-card {
+   max-width: 520px;
+   background: var(--bg-card);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+   padding: 36px;
+}
+
+.form-group {
+   margin-bottom: 20px;
+}
+
+.form-group label {
+   display: block;
+   font-size: 0.85rem;
+   font-weight: 600;
+   margin-bottom: 6px;
+   color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+   width: 100%;
+   padding: 12px 14px;
+   background: var(--bg-secondary);
+   border: 1px solid var(--border);
+   border-radius: var(--radius-sm);
+   color: var(--text-primary);
+   font-family: inherit;
+   font-size: 0.92rem;
+   outline: none;
+   transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+   border-color: var(--accent);
+   box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.form-group textarea {
+   resize: vertical;
+}
+
+/* Validation error state */
+.form-group input.input-error,
+.form-group select.input-error,
+.form-group textarea.input-error {
+   border-color: var(--danger);
+   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+   animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+
+   0%,
+   100% {
+      transform: translateX(0);
+   }
+
+   20% {
+      transform: translateX(-6px);
+   }
+
+   40% {
+      transform: translateX(6px);
+   }
+
+   60% {
+      transform: translateX(-4px);
+   }
+
+   80% {
+      transform: translateX(4px);
+   }
+}
+
+.form-count {
+   font-size: 0.85rem;
+   color: var(--text-secondary);
+   margin-bottom: 16px;
+}
+
+.form-count span {
+   font-weight: 700;
+   color: var(--accent);
+}
+
+.form-actions {
+   display: flex;
+   gap: 12px;
+}
+
+/* ---------- Course Grid ---------- */
+.course-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+   gap: 24px;
+}
+
+.course-card {
+   background: var(--bg-card);
+   border: 1px solid var(--border);
+   border-radius: var(--radius);
+   padding: 24px;
+   text-align: center;
+   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+   overflow: hidden;
+}
+
+.course-card img {
+   width: 100%;
+   height: 140px;
+   object-fit: cover;
+   border-radius: var(--radius-sm);
+   margin-bottom: 16px;
+   transition: transform var(--transition);
+}
+
+.course-card:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 12px 40px rgba(34, 211, 238, 0.12);
+   border-color: var(--accent);
+}
+
+.course-card:hover img {
+   transform: scale(1.05);
+}
+
+.course-card h4 {
+   font-size: 1rem;
+   font-weight: 600;
+   margin-bottom: 14px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+   margin-top: 20px;
+   padding: 40px 40px 0;
+   background: var(--bg-secondary);
+   border-top: 1px solid var(--border);
+}
+
+.footer-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   padding-bottom: 30px;
+   flex-wrap: wrap;
+   gap: 20px;
+}
+
+.footer-brand h3 {
+   font-size: 1.3rem;
+   font-weight: 800;
+   margin-bottom: 6px;
+}
+
+.footer-brand p {
+   color: var(--text-secondary);
+   font-size: 0.88rem;
+}
+
+.footer-info p {
+   color: var(--text-secondary);
+   font-size: 0.88rem;
+   margin-bottom: 4px;
+}
+
+.footer-bottom {
+   padding: 16px 0;
+   border-top: 1px solid var(--border);
+   text-align: center;
+}
+
+.footer-bottom p {
+   font-size: 0.8rem;
+   color: var(--text-secondary);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+   .header {
+      padding: 12px 20px;
+   }
+
+   .nav-bar {
+      gap: 16px;
+   }
+
+   .hero-content h1 {
+      font-size: 2rem;
+   }
+
+   .section {
+      padding: 36px 20px;
+   }
+
+   .add-job-form {
+      flex-direction: column;
+   }
+
+   .form-actions {
+      flex-direction: column;
+   }
+}

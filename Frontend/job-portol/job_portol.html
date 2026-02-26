@@ -1,209 +1,223 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title id="title" >UniHire</title>
-    <link rel="icon" href="unihire.png" type="image/png" style="border-radius: 50%;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">UniHire — Job Portal</title>
+    <link rel="icon" href="unihire.png" type="image/png">
+    <link rel="stylesheet" href="job-portol.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<link rel="stylesheet" href="job-portol.css">
+<body>
 
-
-<body class="body">
-<header class="header" style="border-radius: 20px; display: flex; align-items: center; justify-content: space-between;">
-<!-- ===== PORTAL TITLE ===== -->
- <pre><img src="unihire.png" alt="" style="height: 100px;"></pre>
-
-<!-- ===== NAVIGATION ===== -->
-<nav class="nav-bar" style="display: flex; justify-content: right; gap: 20px; font-size: 14px; color: black;">
-
-    <a href="#sun">☀️</a>
-    <a href="#moon">🌙</a>
-    <a href="#home">Home</a>
-    <a href="#jobs">Jobs</a>
-    <a href="#companies">Companies</a>
-    <button id="applyBtn">Apply</button>
-    <a href="#contact">Contact</a>
-</nav>
+<!-- ===== HEADER / NAVBAR ===== -->
+<header class="header">
+    <div class="logo-area">
+        <img src="unihire.png" alt="UniHire" class="logo-img">
+        <span class="logo-text">Uni<span class="accent">Hire</span></span>
+    </div>
+    <nav class="nav-bar">
+        <a href="#home">Home</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#companies">Companies</a>
+        <a href="#apply" id="applyBtn" class="nav-apply-btn">Apply</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
-<hr style="border-color: rgb(115, 195, 249);">
 
-<!-- ===== HOME SECTION ===== -->
-<section id="home">
-    <h2 style="color: rgb(115, 195, 249);">Welcome to UniHire</h2>
-    <p>
-        UniHire is a basic job portal designed for students and freshers.
-        This portal helps candidates find suitable jobs and internships
-        based on their skills and qualifications.
-    </p>
-
-    <blockquote>
-        “Your career starts with a single opportunity.”
-    </blockquote>
+<!-- ===== HERO / HOME SECTION ===== -->
+<section id="home" class="hero-section">
+    <div class="hero-content">
+        <h1>Find Your <span class="accent">Dream Job</span> Today</h1>
+        <p class="hero-sub">UniHire is a modern job portal designed for students and freshers. Discover suitable jobs and internships based on your skills and qualifications.</p>
+        <blockquote class="hero-quote">"Your career starts with a single opportunity."</blockquote>
+    </div>
 </section>
 
-<hr>
+<!-- ===== JOB LISTINGS SECTION ===== -->
+<section id="jobs" class="section">
+    <div class="section-header">
+        <h2>Available Jobs</h2>
+        <span class="job-count-badge" id="jobCountBadge">3 Jobs</span>
+    </div>
 
-<!-- ===== JOB LISTINGS ===== -->
-<section id="jobs">
-    <h2 style="color: rgb(115, 195, 249);">Available Jobs</h2>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search jobs by role, location, or type..." class="search-input">
+    </div>
 
-    <table border="1" cellpadding="8" style="border-radius: 7px;">
-        <tr>
-            <th>Job ID</th>
-            <th>Role</th>
-            <th>Location</th>
-            <th>Type</th>
-        </tr>
+    <!-- Add Job Form -->
+    <div class="add-job-card" id="addJobCard">
+        <h3>➕ Add New Job</h3>
+        <div class="add-job-form">
+            <input type="text" id="newJobId" placeholder="Job ID (e.g. J104)" class="add-job-input">
+            <input type="text" id="newJobRole" placeholder="Role" class="add-job-input">
+            <input type="text" id="newJobLocation" placeholder="Location" class="add-job-input">
+            <select id="newJobType" class="add-job-input">
+                <option value="">Select Type</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+                <option value="Internship">Internship</option>
+                <option value="Remote">Remote</option>
+            </select>
+            <button id="addJobBtn" class="btn btn-accent">Add Job</button>
+        </div>
+    </div>
 
-        <tr>
-            <td>J101</td>
-            <td>Software Developer</td>
-            <td>Bangalore</td>
-            <td>Full Time</td>
-        </tr>
-
-        <tr>
-            <td>J102</td>
-            <td>Web Developer</td>
-            <td>Remote</td>
-            <td>Internship</td>
-        </tr>
-
-        <tr>
-            <td>J103</td>
-            <td>Data Analyst</td>
-            <td>Pune</td>
-            <td>Full Time</td>
-        </tr>
-    </table>
+    <!-- Job Table -->
+    <div class="table-wrapper">
+        <table id="jobTable">
+            <thead>
+                <tr>
+                    <th>Job ID</th>
+                    <th>Role</th>
+                    <th>Location</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="jobTableBody">
+                <tr>
+                    <td>J101</td>
+                    <td>Software Developer</td>
+                    <td>Bangalore</td>
+                    <td><span class="badge badge-fulltime">Full Time</span></td>
+                    <td><button class="btn btn-delete" title="Delete Job">✕</button></td>
+                </tr>
+                <tr>
+                    <td>J102</td>
+                    <td>Web Developer</td>
+                    <td>Remote</td>
+                    <td><span class="badge badge-internship">Internship</span></td>
+                    <td><button class="btn btn-delete" title="Delete Job">✕</button></td>
+                </tr>
+                <tr>
+                    <td>J103</td>
+                    <td>Data Analyst</td>
+                    <td>Pune</td>
+                    <td><span class="badge badge-fulltime">Full Time</span></td>
+                    <td><button class="btn btn-delete" title="Delete Job">✕</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p id="noResults" class="no-results" style="display:none;">No jobs found matching your search.</p>
 </section>
 
-<hr>
-
-<!-- ===== COMPANY SECTION ===== -->
-<section id="companies">
-    <h2 style="color: rgb(115, 195, 249);">Registered Companies</h2>
-
-    <ul>
-        <li>TechNova Solutions</li>
-        <li>CodeSphere Pvt. Ltd.</li>
-        <li>DataWave Analytics</li>
-        <li>InnovateSoft</li>
-    </ul>
+<!-- ===== COMPANIES SECTION ===== -->
+<section id="companies" class="section">
+    <div class="section-header">
+        <h2>Registered Companies</h2>
+    </div>
+    <div class="company-grid">
+        <div class="company-card">
+            <div class="company-icon">🏢</div>
+            <h4>TechNova Solutions</h4>
+        </div>
+        <div class="company-card">
+            <div class="company-icon">💻</div>
+            <h4>CodeSphere Pvt. Ltd.</h4>
+        </div>
+        <div class="company-card">
+            <div class="company-icon">📊</div>
+            <h4>DataWave Analytics</h4>
+        </div>
+        <div class="company-card">
+            <div class="company-icon">🚀</div>
+            <h4>InnovateSoft</h4>
+        </div>
+    </div>
 </section>
-
-<hr>
 
 <!-- ===== APPLICATION FORM ===== -->
- <div id="applySection">
-<section id="apply">
-    <h2 style="color: rgb(115, 195, 249);">Apply for Job</h2>
-
-    <form>
-        <fieldset id="style" style="border-color:rgb(115, 195, 249); border-radius: 5px; display: inline-block; width: 200px;">
-            <legend >Candidate Details</legend>
-
-            Name:<br>
-            <input type="text" placeholder="Enter your name" class="apply"><br><br>
-
-            Email:<br>
-            <input type="email" placeholder="Enter your email" class="apply"><br><br>
-
-            Qualification:<br>
-            <select class="apply">
-                <option>B.Tech</option>
-                <option>BCA</option>
-                <option>MCA</option>
-                <option>M.Tech</option>
-            </select><br><br>
-
-            Job ID Applying For:<br>
-            <input type="text" placeholder="Enter Job ID" class="apply"><br><br>
-
-            Skills:<br>
-            <textarea rows="4" cols="40" placeholder="Enter your skills" class="apply"></textarea><br><br>
-             <!-- Add a span or div where the count will appear  -->
-             <p>Forms submitted: <span id="count">0</span></p>
-
-            <button id="apply" class="b">Apply</button>
-
-            <button type="reset" class="b">Reset</button>
-        </fieldset>
-    </form>
-</section> 
-</div>
-<!-- Header Apply button -->
-
-
-<!-- Hidden Apply Section -->
-<!-- <div id="applySection" style="display:none;">
-  <h2>Apply for Job</h2>
-  <form>
-    <label>Name:</label>
-    <input type="text" name="name"><br><br>
-
-    <label>Email:</label>
-    <input type="email" name="email"><br><br>
-
-    <label>Qualification:</label>
-    <select>
-      <option>B.Tech</option>
-      <option>M.Tech</option>
-    </select><br><br>
-
-    <label>Job ID Applying For:</label>
-    <input type="text" name="jobid"><br><br>
-
-    <label>Skills:</label>
-    <textarea></textarea><br><br>
-
-    <button type="submit">Apply</button>
-    <button type="reset">Reset</button>
-  </form>
-</div> -->
-
-<!-- <hr style="border-color: rgb(115, 195, 249);"> -->
-
-<!-- ===== FOOTER ===== -->
-<footer id="foot" style="border-radius: 20px;">
-<pre>
-<div style="display: flex;" id="course">
-<div class="border" style="border: 1px solid gray;">
-    <img src="fullstack.png" alt="Full Stack Development" style="height: 102px;">
-    <h3>Full Stack Development</h3>
-    <button class="button">Continue learning</button>
-</div>
-<div class="border" style="border: 1px solid gray;">
-    <img src="java.png" alt="Java" style="height: 102px;">
-    <h3>Java</h3>
-    <button class="button">Continue learning</button>
-</div>
-<div class="border" style="border: 1px solid gray;">
-    <img src="python.png" alt="Python" style="height: 102px;">
-    <h3>Python</h3>
-    <button class="button">Continue learning</button>
-</div>
-<div class="border" style="border: 1px solid gray;">
-    <img src="ml.png" alt="Machine Learning" style="height: 104px;">
-    <h3>Machine Learning</h3>
-    <button class="button">Continue learning</button>
-</div>
-</div>
-<!-- ===== CONTACT SECTION ===== -->
-<section id="contact">
-    <h2 style="color: rgb(115, 195, 249);">Contact Us</h2>
-
-    <address style="font-style: normal; text-align:justify;">
-        UniHire Job Portal<br><br>
-        Email: UniHire@gmail.com<br><br>
-        Location: Chandigarh, India
-    </address>
+<section id="apply" class="section">
+    <div class="section-header">
+        <h2>Apply for Job</h2>
+    </div>
+    <div class="apply-card">
+        <form id="applyForm" novalidate>
+            <div class="form-group">
+                <label for="nameInput">Full Name</label>
+                <input type="text" id="nameInput" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email Address</label>
+                <input type="email" id="emailInput" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="qualInput">Qualification</label>
+                <select id="qualInput" required>
+                    <option value="">Select Qualification</option>
+                    <option>B.Tech</option>
+                    <option>BCA</option>
+                    <option>MCA</option>
+                    <option>M.Tech</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="jobIdInput">Job ID Applying For</label>
+                <input type="text" id="jobIdInput" placeholder="e.g. J101" required>
+            </div>
+            <div class="form-group">
+                <label for="skillsInput">Skills</label>
+                <textarea id="skillsInput" rows="4" placeholder="Enter your skills (e.g. JavaScript, Python, React)" required></textarea>
+            </div>
+            <p class="form-count">Forms submitted: <span id="count">0</span></p>
+            <div class="form-actions">
+                <button type="submit" id="applySubmitBtn" class="btn btn-accent btn-lg">🚀 Apply Now</button>
+                <button type="reset" class="btn btn-outline btn-lg">Reset</button>
+            </div>
+        </form>
+    </div>
 </section>
-<!-- ---------------------------------------------------- -->
 
-© 2026 UniHire
-<!-- ---------------------------------------------------- -->
-</pre>
+<!-- ===== COURSES SECTION ===== -->
+<section id="courses" class="section">
+    <div class="section-header">
+        <h2>Explore Courses</h2>
+    </div>
+    <div class="course-grid">
+        <div class="course-card">
+            <img src="fullstack.png" alt="Full Stack Development">
+            <h4>Full Stack Development</h4>
+            <button class="btn btn-outline-cyan">Continue Learning</button>
+        </div>
+        <div class="course-card">
+            <img src="java.png" alt="Java">
+            <h4>Java</h4>
+            <button class="btn btn-outline-cyan">Continue Learning</button>
+        </div>
+        <div class="course-card">
+            <img src="python.png" alt="Python">
+            <h4>Python</h4>
+            <button class="btn btn-outline-cyan">Continue Learning</button>
+        </div>
+        <div class="course-card">
+            <img src="ml.png" alt="Machine Learning">
+            <h4>Machine Learning</h4>
+            <button class="btn btn-outline-cyan">Continue Learning</button>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT / FOOTER ===== -->
+<footer id="contact" class="footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h3>Uni<span class="accent">Hire</span></h3>
+            <p>Your gateway to a brighter career.</p>
+        </div>
+        <div class="footer-info">
+            <p>📧 UniHire@gmail.com</p>
+            <p>📍 Chandigarh, India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 UniHire — All Rights Reserved</p>
+    </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
